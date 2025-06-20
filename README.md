@@ -7,7 +7,7 @@ Pa-Note is a simple task management web application built with ASP.NET Core Razo
 - Login with feedback messages (success, wrong password, already registered, etc.)
 - Personalized dashboard greeting after login
 - Responsive and modern UI
-- In-memory user store for demo purposes (no database required)
+- Uses SQL Server Management Studio for the Database 
 - Server-side and client-side validation for forms
 
 ## Getting Started
@@ -29,9 +29,6 @@ Pa-Note is a simple task management web application built with ASP.NET Core Razo
 - `Pages/Shared/_Layout.cshtml` - Main layout and navigation
 - `wwwroot/` - Static files (CSS, images, etc.)
 
-## Notes
-- This project uses an in-memory user list for demonstration. All data will be lost when the app stops.
-- For production, integrate a real database and authentication system.
 
 ## License
 This project is for educational/demo purposes. 
