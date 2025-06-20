@@ -1,0 +1,29 @@
+﻿@page
+@model WebApplication5.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["RegisterMessage"] != null)
+{
+    <div style="color: #fff; background: #ed9548; padding: 0.7rem 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center;">
+        @TempData["RegisterMessage"]
+    </div>
+}
+@if (TempData["LoginMessage"] != null)
+{
+    <div style="color: #fff; background: #ed9548; padding: 0.7rem 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center;">
+        @TempData["LoginMessage"]
+    </div>
+}
+
+<h2>Login</h2>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <label>Email:</label>
+    <input asp-for="Input.Email" class="form-control" />
+    <label>Password:</label>
+    <input asp-for="Input.Password" type="password" class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Log In</button>
+</form>
+ 

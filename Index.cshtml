@@ -1,0 +1,39 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebApplication5.Models;
+using WebApplication5.Data;
+
+namespace WebApplication5.Pages
+{
+    public class RegisterModel : PageModel
+    {
+        private readonly LoginDbContext _context;
+
+        [BindProperty]
+        public User NewUser { get; set; }
+
+        public RegisterModel(LoginDbContext context)
+        {
+            _context = context;
+        }
+
+        public void OnGet()
+        {
+        }
+
+        public async Task<IActionResult>
+    OnPostAsync()
+    {
+    if (!ModelState.IsValid)
+    {
+    return Page();
+    }
+
+    _context.Users.Add(NewUser);
+    await _context.SaveChangesAsync();
+
+    TempData["LoginMessage"] = "Registration successful!";
+    return RedirectToPage("/Login");
+    }
+    }
+    }
